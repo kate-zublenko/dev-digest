@@ -11,22 +11,21 @@ finishing*.
 - **Every entry cites evidence** — a `path:line`, a command, or a diff — so the next
   session can re-verify in seconds instead of trusting it.
 - **Fixed sections. Never invent a heading.** Add to the one that fits.
-- Entry shape: `**YYYY-MM-DD** — <claim in one sentence>. Evidence: <path:line>.`
+- Entry shape, body sections:
+  `- **YYYY-MM-DD** — <claim in one sentence>. Evidence: <path:line>.`
+- Entry shape, *Session Notes*: `### YYYY-MM-DD` followed by one or two lines on
+  what the session settled.
 
 This is the **root** file: it holds only findings that cross package boundaries.
 Anything scoped to one package lives in that package's file —
 [`client`](client/insights.md) · [`server`](server/insights.md) ·
 [`reviewer-core`](reviewer-core/insights.md) · [`e2e`](e2e/insights.md).
 
-## Gotchas & fixes
+## What Works
 
-- **2026-09-18** — Half this repo is pnpm and half is npm, so running `pnpm install`
-  in `reviewer-core/` or `e2e/` creates a second competing lockfile. Match the
-  lockfile already in the directory, not the root README's pnpm prerequisite.
-  Evidence: `server/pnpm-lock.yaml`, `client/pnpm-lock.yaml` vs
-  `reviewer-core/package-lock.json`, `e2e/package-lock.json`.
+## What Doesn't Work
 
-## Codebase patterns
+## Codebase Patterns
 
 - **2026-09-18** — No package in this repo has ESLint — no config file, no `eslint`
   dependency, no `lint` script, and no lint step in any of the five workflows — so
@@ -40,9 +39,19 @@ Anything scoped to one package lives in that package's file —
   not leftovers to clean up. Evidence: `.gitignore:3-6`,
   `reviewer-core/README.md:7-9`.
 
-## Rejected approaches
+## Tool & Library Notes
 
-## Open questions
+## Recurring Errors & Fixes
+
+- **2026-09-18** — Half this repo is pnpm and half is npm, so running `pnpm install`
+  in `reviewer-core/` or `e2e/` creates a second competing lockfile. Match the
+  lockfile already in the directory, not the root README's pnpm prerequisite.
+  Evidence: `server/pnpm-lock.yaml`, `client/pnpm-lock.yaml` vs
+  `reviewer-core/package-lock.json`, `e2e/package-lock.json`.
+
+## Session Notes
+
+## Open Questions
 
 - **2026-09-18** — `skills-lock.json` disagrees with `.claude/skills/` in both
   directions, so it cannot be read as an index of available skills — read the

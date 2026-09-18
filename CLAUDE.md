@@ -10,9 +10,12 @@ re-deriving the answer from code.
 
 ## After finishing
 
-When a non-trivial task turns up something non-obvious, append it to the
-`insights.md` of the package you touched — that file's header holds the format and
-the fixed section list. Check a similar entry isn't already there.
+When a non-trivial task turns up something non-obvious, run the
+[`engineering-insights`](.claude/skills/engineering-insights/SKILL.md) skill: it
+decides what is worth keeping, routes it to the `insights.md` of the package you
+touched, proposes the entries, and appends the ones you approve. The skill holds the
+seven fixed sections and both entry shapes; each file's header holds the rules those
+entries follow. Check a similar entry isn't already there.
 
 Skip the write when nothing non-obvious came up. A typo or a routine change is not
 an insight, and noise costs more than silence.

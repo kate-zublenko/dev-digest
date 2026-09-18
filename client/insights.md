@@ -8,7 +8,14 @@ Append-only; correct a stale entry with a dated note beneath it. Every entry cit
 evidence. Fixed sections — never invent a heading. Cross-package findings live in
 [`../insights.md`](../insights.md) instead.
 
-## Gotchas & fixes
+- Entry shape, body sections:
+  `- **YYYY-MM-DD** — <claim in one sentence>. Evidence: <path:line>.`
+- Entry shape, *Session Notes*: `### YYYY-MM-DD` followed by one or two lines on
+  what the session settled.
+
+## What Works
+
+## What Doesn't Work
 
 - **2026-09-18** — `client/src/vendor/shared/` is a hand-copy of the canonical
   `server/src/vendor/shared/`. There is no sync script, and it already lags in 5
@@ -25,11 +32,15 @@ evidence. Fixed sections — never invent a heading. Cross-package findings live
   Every gap is OpenRouter- or CI-runner-related, so the client cannot currently
   express an OpenRouter-backed agent even though the API accepts one.
 
-## Codebase patterns
+## Codebase Patterns
 
-## Rejected approaches
+## Tool & Library Notes
 
-## Open questions
+## Recurring Errors & Fixes
+
+## Session Notes
+
+## Open Questions
 
 - **2026-09-18** — Is the client's vendored `@devdigest/shared` copy meant to be
   synced by a manual step someone knows about, or was it simply forgotten? Nothing in

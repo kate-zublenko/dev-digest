@@ -8,9 +8,16 @@ Append-only; correct a stale entry with a dated note beneath it. Every entry cit
 evidence. Fixed sections — never invent a heading. Cross-package findings live in
 [`../insights.md`](../insights.md) instead.
 
-## Gotchas & fixes
+- Entry shape, body sections:
+  `- **YYYY-MM-DD** — <claim in one sentence>. Evidence: <path:line>.`
+- Entry shape, *Session Notes*: `### YYYY-MM-DD` followed by one or two lines on
+  what the session settled.
 
-## Codebase patterns
+## What Works
+
+## What Doesn't Work
+
+## Codebase Patterns
 
 - **2026-09-18** — `TESTING.md` and two workflows describe `server/package.json` as
   marked `skip-worktree`, which is given as the reason CI inlines the vitest commands
@@ -19,6 +26,10 @@ evidence. Fixed sections — never invent a heading. Cross-package findings live
   the inlined CI commands remain the actual source of truth either way. Evidence:
   `git ls-files -v | grep '^S'` → empty; `.github/workflows/server-unit.yml`.
 
-## Rejected approaches
+## Tool & Library Notes
 
-## Open questions
+## Recurring Errors & Fixes
+
+## Session Notes
+
+## Open Questions
