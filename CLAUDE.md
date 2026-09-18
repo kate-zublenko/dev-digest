@@ -29,7 +29,7 @@ Drizzle ORM + Postgres (pgvector) · Zod 3 · Vitest 2 · agent-browser (e2e)
 
 | Task            | Command                                                 |
 | --------------- | ------------------------------------------------------- |
-| Boot everything | `./scripts/dev.sh` (Postgres + API :3001 + web :3000)   |
+| Boot everything | `./scripts/dev.sh` (Postgres + API :3001 + web :3002)   |
 | Server          | `cd server && pnpm dev \| build \| typecheck \| test`   |
 | Migrations      | `cd server && pnpm db:generate` then `pnpm db:migrate`  |
 | Client          | `cd client && pnpm dev \| build \| typecheck \| test`   |

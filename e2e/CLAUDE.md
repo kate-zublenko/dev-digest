@@ -15,7 +15,7 @@ npm run typecheck
 
 - A flow is `specs/NN-name.flow.json`: a JSON list of agent-browser commands run in
   order against one shared browser session by `run.ts`.
-- `{BASE}` is substituted with `E2E_BASE_URL` (default `http://localhost:3000`).
+- `{BASE}` is substituted with `E2E_BASE_URL` (default `http://localhost:3002`).
 - **`wait --text` / `wait --url` are the assertions** — they exit non-zero on
   timeout. Optional `"assert": { "stdoutIncludes": … }` adds a stdout check.
 - **Deterministic locators only**: `--url`, `--text`, `find role|text|label`. Never
