@@ -49,6 +49,14 @@ Anything scoped to one package lives in that package's file —
   Evidence: `server/pnpm-lock.yaml`, `client/pnpm-lock.yaml` vs
   `reviewer-core/package-lock.json`, `e2e/package-lock.json`.
 
+- **2026-09-19** — `listen EADDRINUSE: address already in use 0.0.0.0:3001` from a
+  second `./scripts/dev.sh` leaves you with *no* working API, not a harmless
+  duplicate: the loser crashes, its `tsx watch` parent then idles forever, and
+  dev.sh's trap only kills its own `$SERVER_PID`, so a previous run's watchers are
+  never reaped. Fix: `pkill -f 'tsx.*src/server.ts'`, then start exactly one.
+  Evidence: `scripts/dev.sh:98-106`; `pgrep -fl 'tsx.*src/server.ts'` → 3 parents,
+  each with no child.
+
 ## Session Notes
 
 ## Open Questions

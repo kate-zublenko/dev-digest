@@ -28,6 +28,11 @@ evidence. Fixed sections — never invent a heading. Cross-package findings live
 
 ## Tool & Library Notes
 
+- **2026-09-19** — `tsx watch` does not restart `src/server.ts` after a crash — it
+  waits for a file change — so `ps` shows a live watcher while nothing is listening
+  on :3001. The tell is `pgrep -P <watcher-pid>` coming back empty. Evidence:
+  `server/package.json:7`; touching any watched file revives it.
+
 ## Recurring Errors & Fixes
 
 ## Session Notes
