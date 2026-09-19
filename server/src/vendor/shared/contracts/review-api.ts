@@ -32,6 +32,9 @@ export const ReviewRecord = z.object({
   score: z.number().int().nullable(),
   model: z.string().nullable(),
   grounding: z.string().nullish(),
+  // What the run behind this review cost in USD, read off the joined agent_run;
+  // null for a review with no run, or a model with no known price.
+  cost_usd: z.number().nullable(),
   created_at: z.string(),
   findings: z.array(FindingRecord),
 });
