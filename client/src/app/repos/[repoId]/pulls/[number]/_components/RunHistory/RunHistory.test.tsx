@@ -74,14 +74,19 @@ describe("RunHistory — outcome badge", () => {
     expect(screen.getByText("running")).toBeInTheDocument();
   });
 
-  it("a settled run shows its tokens and cost beside the time", () => {
-    renderRuns([run({ status: "done", tokens_in: 9119, cost_usd: 0.0013, score: 38, blockers: 0 })]);
-    expect(screen.getByText("9,119 tok · $0.0013")).toBeInTheDocument();
+  it("a settled run shows its total tokens and cost beside the time", () => {
+    renderRuns([
+      run({ status: "done", tokens_in: 9119, tokens_out: 1240, cost_usd: 0.0013, score: 38, blockers: 0 }),
+    ]);
+    // "tok" is the whole run's usage — input plus output, not input alone.
+    expect(screen.getByText("10,359 tok · $0.0013")).toBeInTheDocument();
   });
 
   it("an unpriced run still shows its tokens, with an em-dash for the cost", () => {
-    renderRuns([run({ status: "done", tokens_in: 9119, cost_usd: null, score: 38, blockers: 0 })]);
-    expect(screen.getByText("9,119 tok · —")).toBeInTheDocument();
+    renderRuns([
+      run({ status: "done", tokens_in: 9119, tokens_out: 1240, cost_usd: null, score: 38, blockers: 0 }),
+    ]);
+    expect(screen.getByText("10,359 tok · —")).toBeInTheDocument();
   });
 
   it("a running run shows no cost yet", () => {
