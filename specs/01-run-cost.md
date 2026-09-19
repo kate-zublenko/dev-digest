@@ -1,6 +1,6 @@
 # Run cost
 
-**Status:** agreed
+**Status:** in progress
 **Packages touched:** server, client
 
 ## Problem
